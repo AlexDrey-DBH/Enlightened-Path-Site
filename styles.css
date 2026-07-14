@@ -2026,6 +2026,11 @@ button {
   line-height: 1.45;
 }
 
+.availability-list .location-address {
+  color: var(--text);
+  font-weight: 600;
+}
+
 .availability-list dd + dd {
   margin-top: 3px;
 }
