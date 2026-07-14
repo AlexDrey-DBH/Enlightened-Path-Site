@@ -3928,6 +3928,39 @@ button {
 }
 
 /* Homepage carousel always presents one complete reflection. */
+.local-proof {
+  grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.05fr);
+  align-items: stretch;
+  gap: clamp(38px, 5vw, 64px);
+}
+
+.local-proof .home-reflections-carousel {
+  min-width: 0;
+}
+
+.local-proof .local-card {
+  min-height: 100%;
+  padding: clamp(30px, 3vw, 38px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.local-proof .local-card .text-link {
+  margin-top: 16px;
+}
+
+@media (max-width: 980px) {
+  .local-proof {
+    grid-template-columns: minmax(0, 1fr);
+    align-items: start;
+  }
+
+  .local-proof .local-card {
+    min-height: 0;
+  }
+}
+
 .home-carousel-heading {
   display: flex;
   align-items: center;
