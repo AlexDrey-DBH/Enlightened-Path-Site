@@ -2618,6 +2618,11 @@ button {
     gap: 36px;
   }
 
+  .location-section .split {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 36px;
+  }
+
   .cards,
   .steps,
   .blog-grid,
@@ -3246,6 +3251,10 @@ button {
   }
 
   .availability-list {
+    grid-template-columns: 1fr;
+  }
+
+  .location-section .availability-list {
     grid-template-columns: 1fr;
   }
 
