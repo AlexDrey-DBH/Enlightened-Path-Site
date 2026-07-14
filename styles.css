@@ -3314,8 +3314,8 @@ button {
   .wayfinding-card .chip {
     align-self: flex-start;
     max-width: 100%;
-    font-size: 0.63rem;
-    letter-spacing: 0.045em;
+    font-size: clamp(0.53rem, 2.45vw, 0.63rem);
+    letter-spacing: 0.035em;
     white-space: nowrap;
   }
 
