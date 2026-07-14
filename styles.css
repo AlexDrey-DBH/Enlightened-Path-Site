@@ -2747,7 +2747,7 @@ button {
 
 @media (min-width: 880px) and (max-width: 940px) {
   .contact-hero .container {
-    width: min(1120px, calc(100% - 88px));
+    width: min(1120px, calc(100% - 100px));
   }
 }
 
