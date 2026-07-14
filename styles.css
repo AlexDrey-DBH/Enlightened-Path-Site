@@ -3302,6 +3302,15 @@ button {
 }
 
 @media (max-width: 480px) {
+  .homepage-start-heading h2 {
+    font-size: 1.9rem;
+  }
+
+  .homepage-start-heading h2 span {
+    display: block;
+    white-space: nowrap;
+  }
+
   .booking-section .booking-panel {
     width: calc(100vw - 32px);
     max-width: none;
@@ -3319,6 +3328,12 @@ button {
 
   .nav-links .button {
     min-height: 46px;
+  }
+}
+
+@media (max-width: 350px) {
+  .homepage-start-heading h2 {
+    font-size: 1.72rem;
   }
 }
 
