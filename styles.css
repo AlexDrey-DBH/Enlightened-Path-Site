@@ -2745,6 +2745,12 @@ button {
   }
 }
 
+@media (min-width: 880px) and (max-width: 940px) {
+  .contact-hero .container {
+    width: min(1120px, calc(100% - 88px));
+  }
+}
+
 @media (max-width: 720px) {
   html {
     scroll-padding-top: var(--mobile-header-space, 208px);
