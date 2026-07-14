@@ -99,10 +99,10 @@ def page_sort_key(page: PageInfo) -> tuple[int, str]:
     return 999, page.title.lower() or page.path.lower()
 
 
-def collect_pages(output_root: Path) -> list[PageInfo]:
+def collect_pages(site_root: Path) -> list[PageInfo]:
     pages: list[PageInfo] = []
-    for page in sorted(output_root.rglob("*.html")):
-        relative = page.relative_to(output_root).as_posix()
+    for page in sorted(site_root.rglob("*.html")):
+        relative = page.relative_to(site_root).as_posix()
         if relative == "local-sitemap.html":
             continue
         parser = PageInfoParser()
@@ -121,7 +121,7 @@ def collect_pages(output_root: Path) -> list[PageInfo]:
 
 def page_card(page: PageInfo) -> str:
     search = " ".join((page.path, page.title, page.h1, *page.actions)).lower()
-    href = "../outputs/" + quote(page.path, safe="/")
+    href = "../" + quote(page.path, safe="/")
     actions = "".join(
         f'<li><span>Action</span>{html.escape(action)}</li>' for action in page.actions
     )
@@ -140,8 +140,8 @@ def page_card(page: PageInfo) -> str:
       </article>"""
 
 
-def build_local_sitemap(output_root: Path, destination: Path) -> tuple[int, int]:
-    pages = collect_pages(output_root)
+def build_local_sitemap(site_root: Path, destination: Path) -> tuple[int, int]:
+    pages = collect_pages(site_root)
     groups: dict[str, list[PageInfo]] = defaultdict(list)
     for page in pages:
         groups[group_for(page.path)].append(page)
@@ -216,7 +216,7 @@ def build_local_sitemap(output_root: Path, destination: Path) -> tuple[int, int]
   </style>
 </head>
 <body>
-  <header><div class="wrap"><p class="eyebrow">Local QA only</p><h1>Site map and action register</h1><p>Generated from every HTML file in <code>outputs</code>. This page is ignored by Git and excluded from the committed website.</p><div class="stats"><span class="stat">{len(pages)} pages</span><span class="stat">{len(action_pages)} pages with actions</span><span class="stat action">{actions} open actions</span><span class="stat">Updated {html.escape(generated)}</span></div></div></header>
+  <header><div class="wrap"><p class="eyebrow">Local QA only</p><h1>Site map and action register</h1><p>Generated from every HTML file in the production site root. This page is ignored by Git and excluded from the committed website.</p><div class="stats"><span class="stat">{len(pages)} pages</span><span class="stat">{len(action_pages)} pages with actions</span><span class="stat action">{actions} open actions</span><span class="stat">Updated {html.escape(generated)}</span></div></div></header>
   <main class="wrap">
     <div class="toolbar"><label><span class="eyebrow">Filter pages</span><input id="page-filter" type="search" placeholder="Search by page, title, heading, or action"></label></div>
     <section class="action-register"><h2>Open action items</h2>{action_cards or '<p>No open action items.</p>'}</section>
@@ -238,9 +238,9 @@ def build_local_sitemap(output_root: Path, destination: Path) -> tuple[int, int]
 
 
 def main() -> None:
-    project_root = Path(__file__).resolve().parents[1]
+    project_root = Path(__file__).resolve().parents[2]
     pages, actions = build_local_sitemap(
-        project_root / "outputs", project_root / ".local" / "site-map.html"
+        project_root, project_root / ".local" / "site-map.html"
     )
     print(f"Generated local sitemap with {pages} pages and {actions} action items")
 

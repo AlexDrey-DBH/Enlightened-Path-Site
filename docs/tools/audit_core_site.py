@@ -86,7 +86,7 @@ def local_target(page: Path, raw_url: str) -> tuple[Path | None, str]:
 
 
 def main() -> int:
-    root = Path(__file__).resolve().parents[1] / "outputs"
+    root = Path(__file__).resolve().parents[2]
     errors: list[str] = []
     parsed: dict[Path, PageParser] = {}
     local_map = root.parent / ".local" / "site-map.html"

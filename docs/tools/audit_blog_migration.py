@@ -14,6 +14,8 @@ from lxml import html
 
 
 ORIGIN = "https://www.enlightenedpathhealing.com"
+PROJECT_ROOT = Path(__file__).resolve().parents[2]
+MIGRATION_DOCS = PROJECT_ROOT / "docs" / "migration"
 
 
 def local_target(output_root: Path, href: str) -> Path | None:
@@ -35,10 +37,9 @@ def local_target(output_root: Path, href: str) -> Path | None:
     return candidate / "index.html"
 
 
-def audit(output_root: Path) -> dict:
+def audit(output_root: Path, report_path: Path) -> dict:
     errors: list[str] = []
     warnings: list[str] = []
-    report_path = output_root / "blog-migration-report.csv"
     with report_path.open(newline="", encoding="utf-8-sig") as handle:
         report = list(csv.DictReader(handle))
 
@@ -145,10 +146,11 @@ def audit(output_root: Path) -> dict:
 
 def main() -> int:
     parser = argparse.ArgumentParser()
-    parser.add_argument("--output-root", type=Path, default=Path("outputs"))
-    parser.add_argument("--report", type=Path, default=Path("outputs/blog-migration-audit.json"))
+    parser.add_argument("--output-root", type=Path, default=PROJECT_ROOT)
+    parser.add_argument("--migration-report", type=Path, default=MIGRATION_DOCS / "blog-migration-report.csv")
+    parser.add_argument("--report", type=Path, default=MIGRATION_DOCS / "blog-migration-audit.json")
     args = parser.parse_args()
-    result = audit(args.output_root)
+    result = audit(args.output_root, args.migration_report)
     args.report.write_text(json.dumps(result, indent=2), encoding="utf-8")
     print(json.dumps(result, indent=2))
     return 0 if result["passed"] else 1

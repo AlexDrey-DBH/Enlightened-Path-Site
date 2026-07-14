@@ -728,10 +728,12 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--url", help="Migrate one live article URL")
     parser.add_argument("--all", action="store_true", help="Migrate all mapped posts and consolidate taxonomies")
     parser.add_argument("--limit", type=int, help="Limit post migrations for a staged run")
-    parser.add_argument("--map", type=Path, default=Path("outputs/blog-migration-map.csv"))
-    parser.add_argument("--output-root", type=Path, default=Path("outputs"))
-    parser.add_argument("--report", type=Path, default=Path("outputs/blog-migration-report.csv"))
-    parser.add_argument("--manifest", type=Path, default=Path("outputs/blog-content-manifest.json"))
+    project_root = Path(__file__).resolve().parents[2]
+    migration_docs = project_root / "docs" / "migration"
+    parser.add_argument("--map", type=Path, default=migration_docs / "blog-migration-map.csv")
+    parser.add_argument("--output-root", type=Path, default=project_root)
+    parser.add_argument("--report", type=Path, default=migration_docs / "blog-migration-report.csv")
+    parser.add_argument("--manifest", type=Path, default=migration_docs / "blog-content-manifest.json")
     parser.add_argument("--no-assets", action="store_true", help="Keep live image URLs instead of downloading")
     parser.add_argument("--force", action="store_true", help="Replace previously migrated non-placeholder pages")
     parser.add_argument("--delay", type=float, default=0.15, help="Pause between live requests")

@@ -1,17 +1,17 @@
 # Local QA Sitemap and Action Items
 
-The development sitemap is generated at `.local/site-map.html`. The `.local` directory is ignored by Git and sits outside the deployable `outputs` directory.
+The development sitemap is generated at `.local/site-map.html`. The `.local` directory is ignored by Git and sits outside the deployable site root.
 
 ## Updating the Sitemap
 
 Run either command after adding, renaming, or removing pages:
 
 ```powershell
-python scripts/generate_local_sitemap.py
-python scripts/audit_core_site.py
+python docs/tools/generate_local_sitemap.py
+python docs/tools/audit_core_site.py
 ```
 
-The core-site audit regenerates the local sitemap automatically. It inventories every HTML page under `outputs`, groups the legacy archive, and reports open action items.
+The core-site audit regenerates the local sitemap automatically. It inventories every HTML page in the production site root, groups the legacy archive, and reports open action items.
 
 ## Marking Action Items
 
