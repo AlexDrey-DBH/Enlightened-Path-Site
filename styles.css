@@ -3111,7 +3111,8 @@ button {
   }
 
   .booking-panel {
-    padding: 22px;
+    width: min(760px, calc(100% - 32px));
+    padding: 16px;
   }
 
   .booking-copy h2 {
@@ -3254,6 +3255,11 @@ button {
 }
 
 @media (max-width: 480px) {
+  .booking-section .booking-panel {
+    width: calc(100% - 24px);
+    padding: 12px;
+  }
+
   .nav-links {
     grid-template-columns: 1fr;
     gap: 8px;
