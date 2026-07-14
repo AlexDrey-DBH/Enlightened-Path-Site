@@ -1,11 +1,11 @@
 # Local review tools and source material that are not part of the deployable site.
-.local/
-.agents/
-.codex/
-Acuity Screenshots/
-strategy-doc-render/
-tmp/
-work/
+/.local/
+/.agents/
+/.codex/
+/Acuity Screenshots/
+/strategy-doc-render/
+/tmp/
+/work/
 
 # Root-level screenshots in outputs are design QA captures. Production media is
 # stored under outputs/assets and remains tracked.
