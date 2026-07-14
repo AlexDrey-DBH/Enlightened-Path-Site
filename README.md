@@ -1,64 +1,38 @@
 # Enlightened Path Healing
 
-Static website refresh for [Enlightened Path Healing](https://www.enlightenedpathhealing.com/), including the redesigned core experience and the preserved Healer Next Door archive used for SEO migration.
+The production website lives directly in this repository root. It is a static site designed for GitHub source control and direct deployment through Vercel.
 
-## Project structure
+## Production structure
 
-- `outputs/` - deployable website root
-- `outputs/assets/` - production images, fonts, and licensed social SVGs
-- `outputs/healernextdoor/` - migrated legacy article archive
-- `scripts/` - migration, extraction, sitemap, and QA utilities
-- `.local/site-map.html` - generated local-only sitemap and action-item view; intentionally ignored by Git
-- `LOCAL-QA.md` - local sitemap and hot-pink action-item conventions
-- `google-sheets-discovery-call-setup.md` - discovery-call form integration steps
+- `index.html` and root HTML files: primary pages
+- `assets/`: production images, fonts, and licensed social icons
+- route folders such as `about/`, `healernextdoor/`, and `events/`: legacy and SEO-preserved URLs
+- `styles.css` and `site.js`: shared site styling and behavior
+- `sitemap.xml`, `robots.txt`, `_redirects`, and `vercel.json`: search and deployment configuration
+- `docs/`: non-production strategy, migration, QA, integration, and maintenance material
 
 ## Local preview
 
-The site can be opened directly from `outputs/index.html`. A local server gives more reliable relative-link behavior:
-
 ```powershell
-py -m http.server 8000 --directory outputs
+py -m http.server 8000
 ```
 
-Then open `http://localhost:8000/`.
+Open `http://localhost:8000/`.
 
-## Quality checks
+## Vercel deployment
 
-Install the one audit dependency and run both checks before a release:
+Import this repository in Vercel and use these settings:
 
-```powershell
-py -m pip install -r requirements-dev.txt
-py scripts/audit_core_site.py
-py scripts/audit_blog_migration.py
-```
+- Framework Preset: `Other`
+- Build Command: leave blank
+- Output Directory: leave blank
 
-The core audit also regenerates `.local/site-map.html`. The current site has two intentionally visible hot-pink launch actions: replace the ancestral-healing placeholder and connect the discovery-call form to its Google Sheets endpoint.
+Vercel serves `index.html` from the repository root. `vercel.json` preserves the clean canonical routes and redirects used by the prior site.
 
-## Deployment
+## SEO preservation
 
-Publish the contents of `outputs/` as the site root. The folder already contains `_redirects` for Netlify-style hosts and `.htaccess-legacy-redirects.txt` for Apache hosts. On Apache, rename that file to `.htaccess` during deployment.
-
-Before pointing the live domain at the new build:
-
-1. Complete every hot-pink action item listed in `.local/site-map.html`.
-2. Run both QA scripts and resolve all errors.
-3. Confirm the Acuity embed, discovery-call form, and newsletter signup in the production environment.
-4. Verify legacy redirects and canonical URLs against `outputs/blog-migration-map.csv` and `outputs/legacy-seo-inventory.csv`.
-5. Submit `outputs/sitemap.xml` in Google Search Console after launch.
-
-## GitHub setup
-
-This workspace is initialized as a Git repository. To publish it to a new GitHub repository, create an empty repository on GitHub and run:
-
-```powershell
-git remote add origin https://github.com/YOUR-ACCOUNT/YOUR-REPOSITORY.git
-git push -u origin main
-```
-
-The GitHub Actions workflow in `.github/workflows/site-qa.yml` runs the core-site and blog-migration audits on every push and pull request.
+The full Healer Next Door archive remains in `healernextdoor/`, including legacy taxonomy routes and local image assets. Migration records and audits are retained under `docs/migration/` for reference, but are not published as website files.
 
 ## Asset note
 
-The social icons under `outputs/assets/icons/social/` are derived from a client-supplied, licensed Adobe Stock EPS. The extraction script preserves the purchased vector geometry and applies the Enlightened Path Healing plum. Do not redistribute the original stock source independently of its license.
-
-All site content and brand assets are proprietary to Enlightened Path Healing unless otherwise noted.
+The social icons in `assets/icons/social/` are derived from a client-supplied, licensed Adobe Stock EPS. Do not redistribute the original stock source independently of its license.

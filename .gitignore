@@ -1,23 +1,16 @@
-# Local review tools and source material that are not part of the deployable site.
+# Local development and deployment artifacts.
 /.local/
-/.agents/
-/.codex/
-/Acuity Screenshots/
-/strategy-doc-render/
 /tmp/
-/work/
+/.vercel/
+/node_modules/
+/dist/
 
-# Root-level screenshots in outputs are design QA captures. Production media is
-# stored under outputs/assets and remains tracked.
-outputs/*.png
-
-# Python and operating-system noise.
+# Operating-system and interpreter noise.
 __pycache__/
 *.py[cod]
 .DS_Store
 Thumbs.db
 
-# Local archives and environment files.
-*.zip
+# Local secrets.
 .env
 .env.*
