@@ -1,0 +1,1247 @@
+[
+  {
+    "file": "C:\\Users\\Alex Dreyfuss\\Downloads\\User_attributes_overview.csv",
+    "sections": [
+      {
+        "name": "Country ID",
+        "header": [
+          "Country ID",
+          "Active users"
+        ],
+        "row_count": 91,
+        "top_rows": [
+          {
+            "Country ID": "US",
+            "Active users": "3875"
+          },
+          {
+            "Country ID": "CN",
+            "Active users": "3580"
+          },
+          {
+            "Country ID": "SG",
+            "Active users": "2286"
+          },
+          {
+            "Country ID": "DE",
+            "Active users": "602"
+          },
+          {
+            "Country ID": "IE",
+            "Active users": "101"
+          },
+          {
+            "Country ID": "GB",
+            "Active users": "96"
+          },
+          {
+            "Country ID": "SE",
+            "Active users": "93"
+          },
+          {
+            "Country ID": "NL",
+            "Active users": "76"
+          },
+          {
+            "Country ID": "IN",
+            "Active users": "66"
+          },
+          {
+            "Country ID": "RU",
+            "Active users": "58"
+          },
+          {
+            "Country ID": "CA",
+            "Active users": "39"
+          },
+          {
+            "Country ID": "AU",
+            "Active users": "35"
+          },
+          {
+            "Country ID": "FR",
+            "Active users": "30"
+          },
+          {
+            "Country ID": "PK",
+            "Active users": "29"
+          },
+          {
+            "Country ID": "BR",
+            "Active users": "27"
+          }
+        ]
+      },
+      {
+        "name": "Country",
+        "header": [
+          "Country",
+          "Active users"
+        ],
+        "row_count": 7,
+        "top_rows": [
+          {
+            "Country": "US",
+            "Active users": "3875"
+          },
+          {
+            "Country": "CN",
+            "Active users": "3580"
+          },
+          {
+            "Country": "SG",
+            "Active users": "2286"
+          },
+          {
+            "Country": "DE",
+            "Active users": "602"
+          },
+          {
+            "Country": "IE",
+            "Active users": "101"
+          },
+          {
+            "Country": "GB",
+            "Active users": "96"
+          },
+          {
+            "Country": "SE",
+            "Active users": "93"
+          }
+        ]
+      },
+      {
+        "name": "City",
+        "header": [
+          "City",
+          "Active users"
+        ],
+        "row_count": 1459,
+        "top_rows": [
+          {
+            "City": "Singapore",
+            "Active users": "2169"
+          },
+          {
+            "City": "Lanzhou",
+            "Active users": "2066"
+          },
+          {
+            "City": "New York",
+            "Active users": "419"
+          },
+          {
+            "City": "Montclair",
+            "Active users": "277"
+          },
+          {
+            "City": "Columbus",
+            "Active users": "166"
+          },
+          {
+            "City": "Shanghai",
+            "Active users": "144"
+          },
+          {
+            "City": "Ashburn",
+            "Active users": "118"
+          },
+          {
+            "City": "Newark",
+            "Active users": "110"
+          },
+          {
+            "City": "Dublin",
+            "Active users": "100"
+          },
+          {
+            "City": "Forest City",
+            "Active users": "100"
+          },
+          {
+            "City": "Lulea",
+            "Active users": "85"
+          },
+          {
+            "City": "Prineville",
+            "Active users": "83"
+          },
+          {
+            "City": "Amsterdam",
+            "Active users": "69"
+          },
+          {
+            "City": "Hangzhou",
+            "Active users": "65"
+          },
+          {
+            "City": "Bloomfield",
+            "Active users": "59"
+          }
+        ]
+      },
+      {
+        "name": "Gender",
+        "header": [
+          "Gender",
+          "Active users"
+        ],
+        "row_count": 2,
+        "top_rows": [
+          {
+            "Gender": "female",
+            "Active users": "427"
+          },
+          {
+            "Gender": "male",
+            "Active users": "204"
+          }
+        ]
+      },
+      {
+        "name": "Interests",
+        "header": [
+          "Interests",
+          "Active users"
+        ],
+        "row_count": 68,
+        "top_rows": [
+          {
+            "Interests": "News & Politics/Avid News Readers/Entertainment News Enthusiasts",
+            "Active users": "116"
+          },
+          {
+            "Interests": "Food & Dining/Cooking Enthusiasts/Aspiring Chefs",
+            "Active users": "105"
+          },
+          {
+            "Interests": "Travel/Travel Buffs",
+            "Active users": "99"
+          },
+          {
+            "Interests": "News & Politics/Avid News Readers",
+            "Active users": "94"
+          },
+          {
+            "Interests": "Shoppers/Shopping Enthusiasts",
+            "Active users": "91"
+          },
+          {
+            "Interests": "Lifestyles & Hobbies/Shutterbugs",
+            "Active users": "79"
+          },
+          {
+            "Interests": "Technology/Technophiles",
+            "Active users": "78"
+          },
+          {
+            "Interests": "Media & Entertainment/Movie Lovers",
+            "Active users": "74"
+          },
+          {
+            "Interests": "Banking & Finance/Avid Investors",
+            "Active users": "71"
+          },
+          {
+            "Interests": "Sports & Fitness/Health & Fitness Buffs",
+            "Active users": "69"
+          },
+          {
+            "Interests": "Home & Garden/Home Decor Enthusiasts",
+            "Active users": "56"
+          },
+          {
+            "Interests": "News & Politics/Avid News Readers/Avid Business News Readers",
+            "Active users": "56"
+          },
+          {
+            "Interests": "Technology/Social Media Enthusiasts",
+            "Active users": "56"
+          },
+          {
+            "Interests": "Media & Entertainment/TV Lovers",
+            "Active users": "53"
+          },
+          {
+            "Interests": "Media & Entertainment/Book Lovers",
+            "Active users": "51"
+          }
+        ]
+      },
+      {
+        "name": "Age",
+        "header": [
+          "Age",
+          "Active users"
+        ],
+        "row_count": 6,
+        "top_rows": [
+          {
+            "Age": "25-34",
+            "Active users": "154"
+          },
+          {
+            "Age": "45-54",
+            "Active users": "112"
+          },
+          {
+            "Age": "35-44",
+            "Active users": "103"
+          },
+          {
+            "Age": "18-24",
+            "Active users": "100"
+          },
+          {
+            "Age": "55-64",
+            "Active users": "77"
+          },
+          {
+            "Age": "65+",
+            "Active users": "35"
+          }
+        ]
+      },
+      {
+        "name": "Language",
+        "header": [
+          "Language",
+          "Active users"
+        ],
+        "row_count": 28,
+        "top_rows": [
+          {
+            "Language": "English",
+            "Active users": "9345"
+          },
+          {
+            "Language": "Chinese",
+            "Active users": "1350"
+          },
+          {
+            "Language": "Spanish",
+            "Active users": "18"
+          },
+          {
+            "Language": "Italian",
+            "Active users": "10"
+          },
+          {
+            "Language": "German",
+            "Active users": "9"
+          },
+          {
+            "Language": "French",
+            "Active users": "6"
+          },
+          {
+            "Language": "Norwegian Bokm\u00e5l",
+            "Active users": "6"
+          },
+          {
+            "Language": "Dutch",
+            "Active users": "5"
+          },
+          {
+            "Language": "Greek",
+            "Active users": "5"
+          },
+          {
+            "Language": "Portuguese",
+            "Active users": "5"
+          },
+          {
+            "Language": "Danish",
+            "Active users": "3"
+          },
+          {
+            "Language": "Indonesian",
+            "Active users": "3"
+          },
+          {
+            "Language": "Finnish",
+            "Active users": "2"
+          },
+          {
+            "Language": "Romanian",
+            "Active users": "2"
+          },
+          {
+            "Language": "Slovenian",
+            "Active users": "2"
+          }
+        ]
+      },
+      {
+        "name": "Cohort",
+        "header": [
+          "Cohort",
+          "Average 120d value"
+        ],
+        "row_count": 120,
+        "top_rows": [
+          {
+            "Cohort": "0000",
+            "Average 120d value": "0"
+          },
+          {
+            "Cohort": "0001",
+            "Average 120d value": "0"
+          },
+          {
+            "Cohort": "0002",
+            "Average 120d value": "0"
+          },
+          {
+            "Cohort": "0003",
+            "Average 120d value": "0"
+          },
+          {
+            "Cohort": "0004",
+            "Average 120d value": "0"
+          },
+          {
+            "Cohort": "0005",
+            "Average 120d value": "0"
+          },
+          {
+            "Cohort": "0006",
+            "Average 120d value": "0"
+          },
+          {
+            "Cohort": "0007",
+            "Average 120d value": "0"
+          },
+          {
+            "Cohort": "0008",
+            "Average 120d value": "0"
+          },
+          {
+            "Cohort": "0009",
+            "Average 120d value": "0"
+          },
+          {
+            "Cohort": "0010",
+            "Average 120d value": "0"
+          },
+          {
+            "Cohort": "0011",
+            "Average 120d value": "0"
+          },
+          {
+            "Cohort": "0012",
+            "Average 120d value": "0"
+          },
+          {
+            "Cohort": "0013",
+            "Average 120d value": "0"
+          },
+          {
+            "Cohort": "0014",
+            "Average 120d value": "0"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "file": "C:\\Users\\Alex Dreyfuss\\Downloads\\Acquisition_overview.csv",
+    "sections": [
+      {
+        "name": "Nth day",
+        "header": [
+          "Nth day",
+          "Active users"
+        ],
+        "row_count": 557,
+        "top_rows": [
+          {
+            "Nth day": "0080",
+            "Active users": "514"
+          },
+          {
+            "Nth day": "0331",
+            "Active users": "94"
+          },
+          {
+            "Nth day": "0543",
+            "Active users": "91"
+          },
+          {
+            "Nth day": "0427",
+            "Active users": "88"
+          },
+          {
+            "Nth day": "0400",
+            "Active users": "84"
+          },
+          {
+            "Nth day": "0309",
+            "Active users": "78"
+          },
+          {
+            "Nth day": "0314",
+            "Active users": "75"
+          },
+          {
+            "Nth day": "0312",
+            "Active users": "70"
+          },
+          {
+            "Nth day": "0313",
+            "Active users": "66"
+          },
+          {
+            "Nth day": "0315",
+            "Active users": "65"
+          },
+          {
+            "Nth day": "0293",
+            "Active users": "64"
+          },
+          {
+            "Nth day": "0381",
+            "Active users": "62"
+          },
+          {
+            "Nth day": "0395",
+            "Active users": "62"
+          },
+          {
+            "Nth day": "0369",
+            "Active users": "59"
+          },
+          {
+            "Nth day": "0391",
+            "Active users": "59"
+          }
+        ]
+      },
+      {
+        "name": "Nth day",
+        "header": [
+          "Nth day",
+          "New users"
+        ],
+        "row_count": 557,
+        "top_rows": [
+          {
+            "Nth day": "0080",
+            "New users": "513"
+          },
+          {
+            "Nth day": "0331",
+            "New users": "94"
+          },
+          {
+            "Nth day": "0543",
+            "New users": "89"
+          },
+          {
+            "Nth day": "0427",
+            "New users": "88"
+          },
+          {
+            "Nth day": "0400",
+            "New users": "82"
+          },
+          {
+            "Nth day": "0309",
+            "New users": "78"
+          },
+          {
+            "Nth day": "0312",
+            "New users": "70"
+          },
+          {
+            "Nth day": "0314",
+            "New users": "66"
+          },
+          {
+            "Nth day": "0315",
+            "New users": "61"
+          },
+          {
+            "Nth day": "0381",
+            "New users": "61"
+          },
+          {
+            "Nth day": "0293",
+            "New users": "60"
+          },
+          {
+            "Nth day": "0313",
+            "New users": "60"
+          },
+          {
+            "Nth day": "0395",
+            "New users": "60"
+          },
+          {
+            "Nth day": "0369",
+            "New users": "58"
+          },
+          {
+            "Nth day": "0392",
+            "New users": "57"
+          }
+        ]
+      },
+      {
+        "name": "First user primary channel group (Default Channel Group)",
+        "header": [
+          "First user primary channel group (Default Channel Group)",
+          "New users"
+        ],
+        "row_count": 6,
+        "top_rows": [
+          {
+            "First user primary channel group (Default Channel Group)": "Direct",
+            "New users": "7645"
+          },
+          {
+            "First user primary channel group (Default Channel Group)": "Organic Search",
+            "New users": "2349"
+          },
+          {
+            "First user primary channel group (Default Channel Group)": "Organic Social",
+            "New users": "589"
+          },
+          {
+            "First user primary channel group (Default Channel Group)": "Referral",
+            "New users": "133"
+          },
+          {
+            "First user primary channel group (Default Channel Group)": "Unassigned",
+            "New users": "14"
+          },
+          {
+            "First user primary channel group (Default Channel Group)": "Organic Video",
+            "New users": "3"
+          }
+        ]
+      },
+      {
+        "name": "Session primary channel group (Default Channel Group)",
+        "header": [
+          "Session primary channel group (Default Channel Group)",
+          "Sessions"
+        ],
+        "row_count": 6,
+        "top_rows": [
+          {
+            "Session primary channel group (Default Channel Group)": "Direct",
+            "Sessions": "8288"
+          },
+          {
+            "Session primary channel group (Default Channel Group)": "Organic Search",
+            "Sessions": "3358"
+          },
+          {
+            "Session primary channel group (Default Channel Group)": "Organic Social",
+            "Sessions": "619"
+          },
+          {
+            "Session primary channel group (Default Channel Group)": "Referral",
+            "Sessions": "196"
+          },
+          {
+            "Session primary channel group (Default Channel Group)": "Unassigned",
+            "Sessions": "105"
+          },
+          {
+            "Session primary channel group (Default Channel Group)": "Organic Video",
+            "Sessions": "3"
+          }
+        ]
+      },
+      {
+        "name": "Session Google Ads campaign",
+        "header": [
+          "Session Google Ads campaign",
+          "Sessions"
+        ],
+        "row_count": 0,
+        "top_rows": []
+      },
+      {
+        "name": "Cohort",
+        "header": [
+          "Cohort",
+          "Average 120d value"
+        ],
+        "row_count": 120,
+        "top_rows": [
+          {
+            "Cohort": "0000",
+            "Average 120d value": "0"
+          },
+          {
+            "Cohort": "0001",
+            "Average 120d value": "0"
+          },
+          {
+            "Cohort": "0002",
+            "Average 120d value": "0"
+          },
+          {
+            "Cohort": "0003",
+            "Average 120d value": "0"
+          },
+          {
+            "Cohort": "0004",
+            "Average 120d value": "0"
+          },
+          {
+            "Cohort": "0005",
+            "Average 120d value": "0"
+          },
+          {
+            "Cohort": "0006",
+            "Average 120d value": "0"
+          },
+          {
+            "Cohort": "0007",
+            "Average 120d value": "0"
+          },
+          {
+            "Cohort": "0008",
+            "Average 120d value": "0"
+          },
+          {
+            "Cohort": "0009",
+            "Average 120d value": "0"
+          },
+          {
+            "Cohort": "0010",
+            "Average 120d value": "0"
+          },
+          {
+            "Cohort": "0011",
+            "Average 120d value": "0"
+          },
+          {
+            "Cohort": "0012",
+            "Average 120d value": "0"
+          },
+          {
+            "Cohort": "0013",
+            "Average 120d value": "0"
+          },
+          {
+            "Cohort": "0014",
+            "Average 120d value": "0"
+          }
+        ]
+      },
+      {
+        "name": "Landing page + query string",
+        "header": [
+          "Landing page + query string",
+          "Organic Google Search impressions"
+        ],
+        "row_count": 243,
+        "top_rows": [
+          {
+            "Landing page + query string": "/",
+            "Organic Google Search impressions": "51244"
+          },
+          {
+            "Landing page + query string": "/healernextdoor/a-guide-to-seeing-auras",
+            "Organic Google Search impressions": "16010"
+          },
+          {
+            "Landing page + query string": "/healernextdoor/meditation-and-reiki-how-they-work-together",
+            "Organic Google Search impressions": "11340"
+          },
+          {
+            "Landing page + query string": "/healernextdoor/magic-of-spiritual-downloads",
+            "Organic Google Search impressions": "8009"
+          },
+          {
+            "Landing page + query string": "/healernextdoor/the-hidden-dangers-of-toxic-positivity-in-spiritual-practice",
+            "Organic Google Search impressions": "4560"
+          },
+          {
+            "Landing page + query string": "/healernextdoor/manifesting-its-more-than-just-wishful-thinking",
+            "Organic Google Search impressions": "2904"
+          },
+          {
+            "Landing page + query string": "/healernextdoor/the-ethics-of-energy-healing-what-a-reiki-healer-should-never-do",
+            "Organic Google Search impressions": "2703"
+          },
+          {
+            "Landing page + query string": "/healernextdoor/rising-above-what-rumis-can-teach-us-about-transcending",
+            "Organic Google Search impressions": "2478"
+          },
+          {
+            "Landing page + query string": "/healernextdoor/reiki-for-kids-what-to-expect",
+            "Organic Google Search impressions": "2235"
+          },
+          {
+            "Landing page + query string": "/healernextdoor/can-spirituality-be-sexy",
+            "Organic Google Search impressions": "2116"
+          },
+          {
+            "Landing page + query string": "/get-started",
+            "Organic Google Search impressions": "2086"
+          },
+          {
+            "Landing page + query string": "/healernextdoor/sacral-chakra",
+            "Organic Google Search impressions": "1985"
+          },
+          {
+            "Landing page + query string": "/healernextdoor/when-spirituality-feels-like-a-competition",
+            "Organic Google Search impressions": "1609"
+          },
+          {
+            "Landing page + query string": "/healernextdoor/navigating-a-politically-charged-world-as-a-spiritual-being",
+            "Organic Google Search impressions": "1352"
+          },
+          {
+            "Landing page + query string": "/healernextdoor/my-spiritual-journey-pia-wilson",
+            "Organic Google Search impressions": "1297"
+          }
+        ]
+      },
+      {
+        "name": "Organic Google Search query",
+        "header": [
+          "Organic Google Search query",
+          "Organic Google Search clicks"
+        ],
+        "row_count": 259,
+        "top_rows": [
+          {
+            "Organic Google Search query": "reiki near me",
+            "Organic Google Search clicks": "54"
+          },
+          {
+            "Organic Google Search query": "reiki healing",
+            "Organic Google Search clicks": "38"
+          },
+          {
+            "Organic Google Search query": "reiki healing near me",
+            "Organic Google Search clicks": "29"
+          },
+          {
+            "Organic Google Search query": "reiki montclair",
+            "Organic Google Search clicks": "28"
+          },
+          {
+            "Organic Google Search query": "energy healing near me",
+            "Organic Google Search clicks": "25"
+          },
+          {
+            "Organic Google Search query": "meditation near me",
+            "Organic Google Search clicks": "21"
+          },
+          {
+            "Organic Google Search query": "reiki montclair nj",
+            "Organic Google Search clicks": "21"
+          },
+          {
+            "Organic Google Search query": "pia wilson",
+            "Organic Google Search clicks": "20"
+          },
+          {
+            "Organic Google Search query": "meditation classes near me",
+            "Organic Google Search clicks": "15"
+          },
+          {
+            "Organic Google Search query": "how to see auras",
+            "Organic Google Search clicks": "13"
+          },
+          {
+            "Organic Google Search query": "reiki",
+            "Organic Google Search clicks": "13"
+          },
+          {
+            "Organic Google Search query": "spiritual healer near me",
+            "Organic Google Search clicks": "13"
+          },
+          {
+            "Organic Google Search query": "energy healer near me",
+            "Organic Google Search clicks": "10"
+          },
+          {
+            "Organic Google Search query": "energy healing",
+            "Organic Google Search clicks": "8"
+          },
+          {
+            "Organic Google Search query": "meditation and reiki",
+            "Organic Google Search clicks": "8"
+          }
+        ]
+      },
+      {
+        "name": "Session manual source",
+        "header": [
+          "Session manual source",
+          "Sessions"
+        ],
+        "row_count": 74,
+        "top_rows": [
+          {
+            "Session manual source": "google",
+            "Sessions": "3156"
+          },
+          {
+            "Session manual source": "facebook.com",
+            "Sessions": "506"
+          },
+          {
+            "Session manual source": "bing",
+            "Sessions": "93"
+          },
+          {
+            "Session manual source": "duckduckgo",
+            "Sessions": "43"
+          },
+          {
+            "Session manual source": "yahoo",
+            "Sessions": "40"
+          },
+          {
+            "Session manual source": "blulotuscenter.com",
+            "Sessions": "35"
+          },
+          {
+            "Session manual source": "montclairlocal.news",
+            "Sessions": "30"
+          },
+          {
+            "Session manual source": "m.facebook.com",
+            "Sessions": "27"
+          },
+          {
+            "Session manual source": "chatgpt.com",
+            "Sessions": "26"
+          },
+          {
+            "Session manual source": "yelp.com",
+            "Sessions": "23"
+          },
+          {
+            "Session manual source": "l.instagram.com",
+            "Sessions": "18"
+          },
+          {
+            "Session manual source": "medium.com",
+            "Sessions": "15"
+          },
+          {
+            "Session manual source": "defbrandhouse.com",
+            "Sessions": "12"
+          },
+          {
+            "Session manual source": "l.facebook.com",
+            "Sessions": "12"
+          },
+          {
+            "Session manual source": "lackawanna.com",
+            "Sessions": "11"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "file": "C:\\Users\\Alex Dreyfuss\\Downloads\\Tech_overview.csv",
+    "sections": [
+      {
+        "name": "Platform",
+        "header": [
+          "Platform",
+          "Active users"
+        ],
+        "row_count": 1,
+        "top_rows": [
+          {
+            "Platform": "[\"Web\"]",
+            "Active users": "10773"
+          }
+        ]
+      },
+      {
+        "name": "Operating system",
+        "header": [
+          "Operating system",
+          "Active users"
+        ],
+        "row_count": 10,
+        "top_rows": [
+          {
+            "Operating system": "Windows",
+            "Active users": "6406"
+          },
+          {
+            "Operating system": "iOS",
+            "Active users": "1733"
+          },
+          {
+            "Operating system": "Macintosh",
+            "Active users": "1096"
+          },
+          {
+            "Operating system": "Android",
+            "Active users": "980"
+          },
+          {
+            "Operating system": "Linux",
+            "Active users": "538"
+          },
+          {
+            "Operating system": "Chrome OS",
+            "Active users": "24"
+          },
+          {
+            "Operating system": "BlackBerry",
+            "Active users": "1"
+          },
+          {
+            "Operating system": "Samsung",
+            "Active users": "1"
+          },
+          {
+            "Operating system": "Sony",
+            "Active users": "1"
+          },
+          {
+            "Operating system": "Windows Phone",
+            "Active users": "1"
+          }
+        ]
+      },
+      {
+        "name": "Platform / device category",
+        "header": [
+          "Platform / device category",
+          "Active users"
+        ],
+        "row_count": 3,
+        "top_rows": [
+          {
+            "Platform / device category": "web / desktop",
+            "Active users": "8133"
+          },
+          {
+            "Platform / device category": "web / mobile",
+            "Active users": "2678"
+          },
+          {
+            "Platform / device category": "web / tablet",
+            "Active users": "43"
+          }
+        ]
+      },
+      {
+        "name": "Browser",
+        "header": [
+          "Browser",
+          "Active users"
+        ],
+        "row_count": 15,
+        "top_rows": [
+          {
+            "Browser": "Chrome",
+            "Active users": "8368"
+          },
+          {
+            "Browser": "Safari",
+            "Active users": "1501"
+          },
+          {
+            "Browser": "Android Webview",
+            "Active users": "266"
+          },
+          {
+            "Browser": "Safari (in-app)",
+            "Active users": "224"
+          },
+          {
+            "Browser": "Edge",
+            "Active users": "184"
+          },
+          {
+            "Browser": "Firefox",
+            "Active users": "104"
+          },
+          {
+            "Browser": "Android Runtime",
+            "Active users": "35"
+          },
+          {
+            "Browser": "Samsung Internet",
+            "Active users": "33"
+          },
+          {
+            "Browser": "Opera",
+            "Active users": "9"
+          },
+          {
+            "Browser": "Mozilla Compatible Agent",
+            "Active users": "4"
+          },
+          {
+            "Browser": "Android Browser",
+            "Active users": "3"
+          },
+          {
+            "Browser": "Internet Explorer",
+            "Active users": "2"
+          },
+          {
+            "Browser": "BlackBerry",
+            "Active users": "1"
+          },
+          {
+            "Browser": "NetFront",
+            "Active users": "1"
+          },
+          {
+            "Browser": "YaBrowser",
+            "Active users": "1"
+          }
+        ]
+      },
+      {
+        "name": "Device category",
+        "header": [
+          "Device category",
+          "Active users"
+        ],
+        "row_count": 3,
+        "top_rows": [
+          {
+            "Device category": "desktop",
+            "Active users": "8133"
+          },
+          {
+            "Device category": "mobile",
+            "Active users": "2678"
+          },
+          {
+            "Device category": "tablet",
+            "Active users": "43"
+          }
+        ]
+      },
+      {
+        "name": "Screen resolution",
+        "header": [
+          "Screen resolution",
+          "Active users"
+        ],
+        "row_count": 272,
+        "top_rows": [
+          {
+            "Screen resolution": "1280x1200",
+            "Active users": "3712"
+          },
+          {
+            "Screen resolution": "3840x2160",
+            "Active users": "1362"
+          },
+          {
+            "Screen resolution": "2000x2000",
+            "Active users": "507"
+          },
+          {
+            "Screen resolution": "390x844",
+            "Active users": "506"
+          },
+          {
+            "Screen resolution": "1920x1080",
+            "Active users": "497"
+          },
+          {
+            "Screen resolution": "800x600",
+            "Active users": "347"
+          },
+          {
+            "Screen resolution": "393x852",
+            "Active users": "324"
+          },
+          {
+            "Screen resolution": "1366x768",
+            "Active users": "272"
+          },
+          {
+            "Screen resolution": "1440x900",
+            "Active users": "203"
+          },
+          {
+            "Screen resolution": "1536x864",
+            "Active users": "193"
+          },
+          {
+            "Screen resolution": "1280x720",
+            "Active users": "181"
+          },
+          {
+            "Screen resolution": "402x874",
+            "Active users": "180"
+          },
+          {
+            "Screen resolution": "1024x10000",
+            "Active users": "171"
+          },
+          {
+            "Screen resolution": "430x932",
+            "Active users": "168"
+          },
+          {
+            "Screen resolution": "440x956",
+            "Active users": "129"
+          }
+        ]
+      },
+      {
+        "name": "Nth day",
+        "header": [
+          "Nth day"
+        ],
+        "row_count": 0,
+        "top_rows": []
+      },
+      {
+        "name": "App",
+        "header": [
+          "App",
+          "Version",
+          "Status"
+        ],
+        "row_count": 0,
+        "top_rows": []
+      },
+      {
+        "name": "App",
+        "header": [
+          "App",
+          "Crash-free users"
+        ],
+        "row_count": 0,
+        "top_rows": []
+      },
+      {
+        "name": "App",
+        "header": [
+          "App",
+          "Crash-free users"
+        ],
+        "row_count": 0,
+        "top_rows": []
+      },
+      {
+        "name": "Device model",
+        "header": [
+          "Device model",
+          "Active users"
+        ],
+        "row_count": 0,
+        "top_rows": []
+      }
+    ]
+  }
+]

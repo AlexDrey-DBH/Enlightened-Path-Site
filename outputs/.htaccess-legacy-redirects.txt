@@ -1,0 +1,23 @@
+# Canonical routes and legacy redirects for Apache-style hosting
+RewriteEngine On
+
+# Internally serve static files while keeping canonical URLs in the browser.
+RewriteRule ^about/?$ about-lisa.html [L]
+RewriteRule ^contact/?$ contact.html [L]
+RewriteRule ^corporate-wellness/?$ corporate-wellness.html [L]
+RewriteRule ^services/?$ services.html [L]
+RewriteRule ^testimonials/?$ success-stories.html [L]
+RewriteRule ^reiki-energy-healing/?$ reiki-energy-healing.html [L]
+RewriteRule ^akashic-records/?$ akashic-records.html [L]
+RewriteRule ^meditation/?$ meditation.html [L]
+RewriteRule ^work-trauma/?$ work-trauma-coaching.html [L]
+RewriteRule ^resources/?$ resources.html [L]
+RewriteRule ^healernextdoor/?$ healernextdoor.html [L]
+
+# Retired legacy routes move to their closest canonical destination.
+Redirect 301 /home /
+Redirect 301 /links /healernextdoor
+Redirect 301 /love /akashic-records
+Redirect 301 /newcomers /services
+Redirect 301 /healernextdoor/category/Astrology /healernextdoor/category/astrology
+Redirect 301 /healernextdoor/tag/Inner+Peace /healernextdoor/tag/inner+peace

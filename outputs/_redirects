@@ -1,0 +1,22 @@
+# Canonical clean routes internally serve the static HTML files.
+/about /about-lisa.html 200
+/contact /contact.html 200
+/corporate-wellness /corporate-wellness.html 200
+/services /services.html 200
+/testimonials /success-stories.html 200
+/reiki-energy-healing /reiki-energy-healing.html 200
+/akashic-records /akashic-records.html 200
+/meditation /meditation.html 200
+/work-trauma /work-trauma-coaching.html 200
+/resources /resources.html 200
+/healernextdoor /healernextdoor.html 200
+
+# Retired legacy routes move to their closest canonical destination.
+/home / 301
+/links /healernextdoor 301
+/love /akashic-records 301
+/newcomers /services 301
+
+# Case-variant legacy taxonomy URLs collapse to one path on Windows.
+/healernextdoor/category/Astrology /healernextdoor/category/astrology 301
+/healernextdoor/tag/Inner+Peace /healernextdoor/tag/inner+peace 301
