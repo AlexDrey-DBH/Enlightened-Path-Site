@@ -3265,8 +3265,9 @@ button {
 
 @media (max-width: 480px) {
   .booking-section .booking-panel {
-    width: calc(100% - 8px);
-    padding: 8px;
+    width: calc(100vw - 32px);
+    max-width: none;
+    padding: 16px;
   }
 
   .nav-links {
