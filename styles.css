@@ -1848,7 +1848,11 @@ button {
 }
 
 .booking-widget {
+  width: min(100%, 760px);
   min-width: 0;
+  margin-inline: auto;
+  justify-self: center;
+  text-align: center;
 }
 
 .booking-window-bar {
@@ -1864,6 +1868,10 @@ button {
     linear-gradient(180deg, rgba(255, 255, 255, 0.96), rgba(245, 239, 244, 0.72));
   color: var(--olive);
   font-size: 0.84rem;
+}
+
+.booking-widget .booking-window-bar {
+  text-align: left;
 }
 
 .booking-window-bar span {
