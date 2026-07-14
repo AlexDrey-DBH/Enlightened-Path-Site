@@ -3311,6 +3311,14 @@ button {
     white-space: nowrap;
   }
 
+  .wayfinding-card .chip {
+    align-self: flex-start;
+    max-width: 100%;
+    font-size: 0.63rem;
+    letter-spacing: 0.045em;
+    white-space: nowrap;
+  }
+
   .booking-section .booking-panel {
     width: calc(100vw - 32px);
     max-width: none;
