@@ -103,7 +103,7 @@ def collect_pages(site_root: Path) -> list[PageInfo]:
     pages: list[PageInfo] = []
     for page in sorted(site_root.rglob("*.html")):
         relative = page.relative_to(site_root).as_posix()
-        if relative == "local-sitemap.html":
+        if relative == "local-sitemap.html" or relative.startswith("tmp/"):
             continue
         parser = PageInfoParser()
         parser.feed(page.read_text(encoding="utf-8", errors="replace"))
