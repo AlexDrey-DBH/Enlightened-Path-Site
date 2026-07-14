@@ -1996,18 +1996,44 @@ button {
 }
 
 .location-section .split {
-  grid-template-columns: minmax(0, 1.08fr) minmax(360px, 0.92fr);
-  align-items: start;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(42px, 5vw, 64px);
+  align-items: stretch;
 }
 
-.location-section h2 {
-  max-width: 15ch;
-  margin-bottom: 28px;
+.location-overview {
+  display: flex;
+  flex-direction: column;
+  padding-top: 28px;
+}
+
+.location-overview h2 {
+  max-width: 12ch;
+  margin-bottom: 24px;
   text-wrap: balance;
 }
 
 .location-section .availability-list {
   grid-template-columns: repeat(2, minmax(0, 1fr));
+  margin-top: auto;
+}
+
+.location-section .detail-card {
+  min-height: 100%;
+  padding: clamp(30px, 3vw, 40px);
+  display: flex;
+  flex-direction: column;
+}
+
+.location-section .detail-card h2 {
+  max-width: 14ch;
+  margin-bottom: 0;
+  text-wrap: balance;
+}
+
+.location-section .detail-card .compact-faq {
+  margin-top: auto;
+  padding-top: 28px;
 }
 
 .availability-hours {
@@ -2634,6 +2660,14 @@ button {
 
   .availability-list {
     grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .location-overview {
+    padding-top: 0;
+  }
+
+  .location-section .detail-card {
+    min-height: 0;
   }
 
   .newsletter-card {
