@@ -1436,6 +1436,10 @@ button {
   max-width: 800px;
 }
 
+.page-hero.corporate-hero h1 span {
+  display: block;
+}
+
 .page-hero.akashic-hero {
   position: relative;
   overflow: hidden;
