@@ -1,6 +1,6 @@
 # Local QA Sitemap and Action Items
 
-The development sitemap is generated at `.local/site-map.html`. The `.local` directory is ignored by Git and sits outside the deployable site root.
+The development sitemap is generated at `tmp/site-map.html`. The `tmp` directory is ignored by Git and sits outside the deployable site files.
 
 ## Updating the Sitemap
 

@@ -240,7 +240,7 @@ def build_local_sitemap(site_root: Path, destination: Path) -> tuple[int, int]:
 def main() -> None:
     project_root = Path(__file__).resolve().parents[2]
     pages, actions = build_local_sitemap(
-        project_root, project_root / ".local" / "site-map.html"
+        project_root, project_root / "tmp" / "site-map.html"
     )
     print(f"Generated local sitemap with {pages} pages and {actions} action items")
 

@@ -1,5 +1,4 @@
 # Local development and deployment artifacts.
-/.local/
 /tmp/
 /.vercel/
 /node_modules/

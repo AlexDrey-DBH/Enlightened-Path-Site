@@ -89,7 +89,7 @@ def main() -> int:
     root = Path(__file__).resolve().parents[2]
     errors: list[str] = []
     parsed: dict[Path, PageParser] = {}
-    local_map = root.parent / ".local" / "site-map.html"
+    local_map = root / "tmp" / "site-map.html"
 
     try:
         sitemap_pages, action_items = build_local_sitemap(root, local_map)
