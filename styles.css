@@ -86,6 +86,10 @@ a {
   white-space: nowrap;
 }
 
+.page-get-started .site-header .nav-links .button {
+  display: none;
+}
+
 .nav-links a:hover {
   border-color: var(--gold);
 }
@@ -3455,6 +3459,10 @@ button {
   color: var(--plum);
   border-color: var(--gold);
   font-weight: 750;
+}
+
+.nav-links a.button[aria-current="page"] {
+  color: var(--white);
 }
 
 .narrow-copy {
