@@ -793,12 +793,29 @@ button {
   height: 82px;
   object-fit: contain;
   display: block;
-  margin: 0 0 18px;
+  margin: 0;
   padding: 8px;
   border: 1px solid rgba(96, 96, 73, 0.14);
   border-radius: 50%;
   background: var(--white);
   box-shadow: 0 10px 24px rgba(62, 52, 57, 0.06);
+  transition: transform 180ms ease, box-shadow 180ms ease;
+}
+
+.accolade-logo-link {
+  display: inline-block;
+  margin: 0 0 18px;
+  border-radius: 50%;
+}
+
+.accolade-logo-link:hover .accolade-logo {
+  transform: translateY(-2px);
+  box-shadow: 0 14px 28px rgba(62, 52, 57, 0.1);
+}
+
+.accolade-logo-link:focus-visible {
+  outline: 3px solid var(--gold);
+  outline-offset: 4px;
 }
 
 .accolade-card h3 {
