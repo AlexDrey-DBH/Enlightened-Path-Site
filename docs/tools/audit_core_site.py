@@ -18,10 +18,13 @@ CORE_PAGES = (
     "meditation.html",
     "work-trauma-coaching.html",
     "corporate-wellness.html",
-    "success-stories.html",
+    "testimonials.html",
     "resources.html",
     "healernextdoor.html",
     "contact.html",
+    "get-started/index.html",
+    "newsletter/index.html",
+    "events/index.html",
 )
 
 

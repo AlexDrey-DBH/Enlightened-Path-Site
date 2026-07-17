@@ -11,47 +11,11 @@
   --lavender: #f5eff4;
   --sage-wash: #f2f5ee;
   --white: #ffffff;
-  --action-pink: #ff2f92;
   --shadow: 0 18px 50px rgba(62, 52, 57, 0.08);
   --radius-sm: 10px;
   --radius: 18px;
   --radius-lg: 26px;
   --radius-pill: 999px;
-}
-
-/* Deliberately loud development markers. Remove the action, not the color. */
-.action-item,
-[data-action-item] {
-  position: relative;
-  border-color: var(--action-pink) !important;
-  outline: 3px solid var(--action-pink);
-  outline-offset: 3px;
-  box-shadow: 0 16px 38px rgba(255, 47, 146, 0.2) !important;
-}
-
-.action-item[data-action-item]::after {
-  content: "Action: " attr(data-action-item);
-  position: absolute;
-  top: 12px;
-  right: 12px;
-  bottom: auto;
-  left: auto;
-  z-index: 5;
-  width: auto;
-  height: auto;
-  max-width: min(280px, calc(100% - 24px));
-  padding: 7px 10px;
-  border: 0;
-  border-radius: var(--radius-sm);
-  background: var(--action-pink);
-  color: var(--white);
-  font-size: 0.7rem;
-  font-weight: 850;
-  line-height: 1.25;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
-  transform: none;
-  pointer-events: none;
 }
 
 * {
@@ -640,12 +604,13 @@ button {
 
 .credibility-grid {
   display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
+  grid-template-columns: repeat(6, minmax(0, 1fr));
   gap: 18px;
   align-items: stretch;
 }
 
 .credential-card {
+  grid-column: span 2;
   padding: 28px;
   border: 1px solid var(--line);
   border-radius: var(--radius);
@@ -692,7 +657,23 @@ button {
 }
 
 .media-card {
-  grid-column: span 2;
+  grid-column: span 3;
+}
+
+.accolade-card {
+  grid-column: span 3;
+}
+
+.testimonial-grid,
+.contact-options {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 22px;
+}
+
+.testimonial-grid .testimonial {
+  height: auto;
+  min-height: 100%;
 }
 
 .video-feature-link {
@@ -1610,10 +1591,12 @@ button {
   font-weight: 800;
 }
 
-.discovery-field input {
+.discovery-field input,
+.discovery-field select,
+.discovery-field textarea {
   width: 100%;
   min-height: 54px;
-  padding: 0 18px;
+  padding: 14px 18px;
   border: 1px solid #ded4dc;
   border-radius: var(--radius-pill);
   background: var(--white);
@@ -1622,12 +1605,29 @@ button {
   font-weight: 400;
 }
 
-.discovery-field input:focus {
+.discovery-field textarea {
+  resize: vertical;
+  border-radius: var(--radius-sm);
+}
+
+.discovery-field small,
+.field-help {
+  color: var(--muted);
+  font-size: 0.82rem;
+  font-weight: 400;
+  line-height: 1.45;
+}
+
+.discovery-field input:focus,
+.discovery-field select:focus,
+.discovery-field textarea:focus {
   outline: 3px solid rgba(239, 179, 26, 0.22);
   border-color: var(--plum-soft);
 }
 
-.discovery-field input[aria-invalid="true"] {
+.discovery-field input[aria-invalid="true"],
+.discovery-field select[aria-invalid="true"],
+.discovery-field textarea[aria-invalid="true"] {
   border-color: var(--plum);
 }
 
@@ -1650,6 +1650,18 @@ button {
   height: 18px;
   margin: 2px 0 0;
   accent-color: var(--plum);
+}
+
+.form-trap {
+  position: absolute !important;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
 }
 
 .discovery-call-form button {
@@ -2307,6 +2319,60 @@ button {
   flex: 1;
 }
 
+.blog-card-image {
+  display: block;
+  aspect-ratio: 16 / 9;
+  margin: -24px -24px 18px;
+  overflow: hidden;
+  border-radius: var(--radius) var(--radius) 0 0;
+  background: var(--soft);
+}
+
+.blog-card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.blog-card-meta {
+  flex: 0 0 auto !important;
+  margin: -4px 0 12px;
+  color: var(--muted);
+  font-size: 0.88rem;
+}
+
+.blog-topic-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 24px;
+}
+
+.blog-topic-nav a {
+  padding: 10px 14px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-pill);
+  background: var(--white);
+  color: var(--olive);
+  font-weight: 800;
+  text-decoration: none;
+}
+
+.blog-topic-nav a:hover,
+.blog-topic-nav a:focus-visible,
+.blog-topic-nav a[aria-current="page"] {
+  border-color: var(--gold);
+  color: var(--plum);
+}
+
+.blog-pagination {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 36px;
+}
+
 .featured-blog-card {
   grid-column: span 2;
   border-radius: var(--radius-lg);
@@ -2652,7 +2718,9 @@ button {
   .cards,
   .steps,
   .blog-grid,
-  .credibility-grid {
+  .credibility-grid,
+  .testimonial-grid,
+  .contact-options {
     grid-template-columns: repeat(2, 1fr);
   }
 
@@ -3215,8 +3283,16 @@ button {
   .legacy-archive-group ul,
   .footer-grid,
   .blog-grid,
-  .credibility-grid {
+  .credibility-grid,
+  .testimonial-grid,
+  .contact-options {
     grid-template-columns: 1fr;
+  }
+
+  .credential-card,
+  .media-card,
+  .accolade-card {
+    grid-column: auto;
   }
 
   .featured-blog-card {
@@ -3572,26 +3648,13 @@ button {
   grid-template-columns: minmax(0, 1.08fr) minmax(320px, 0.92fr);
 }
 
-.ancestral-image-placeholder {
-  width: 100%;
-  min-height: 360px;
-  aspect-ratio: 4 / 3;
-  display: grid;
-  place-items: center;
-  border-radius: var(--radius);
-  background: #ff2f92;
-  box-shadow: 0 16px 38px rgba(255, 47, 146, 0.18);
-  color: var(--white);
-}
-
-.ancestral-image-placeholder span {
-  padding: 10px 14px;
-  border: 1px solid rgba(255, 255, 255, 0.7);
-  border-radius: var(--radius-pill);
-  font-size: 0.76rem;
-  font-weight: 850;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
+.ancestral-context-card {
+  align-self: stretch;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: clamp(28px, 4vw, 46px);
+  background: linear-gradient(145deg, rgba(245, 239, 244, 0.72), rgba(242, 245, 238, 0.92));
 }
 
 .regional-card::after {
@@ -3926,9 +3989,6 @@ button {
     grid-template-columns: 1fr;
   }
 
-  .ancestral-image-placeholder {
-    min-height: 260px;
-  }
 }
 
 @media (max-width: 480px) {

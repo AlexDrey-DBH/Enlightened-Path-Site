@@ -1,0 +1,13 @@
+# Repository material that must not be served as public website content.
+docs/
+samples/
+tmp/
+.github/
+README.md
+
+# Local and source-control artifacts.
+.git/
+.gitignore
+.gitattributes
+*.pyc
+__pycache__/

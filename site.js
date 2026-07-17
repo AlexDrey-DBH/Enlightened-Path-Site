@@ -166,12 +166,18 @@
   }
 
   function buildPayload(form, emailInput) {
+    const firstNameInput = form.querySelector('[name="firstName"]');
+    const inquiryInput = form.querySelector('[name="inquiryType"]');
+    const messageInput = form.querySelector('[name="message"]');
     const newsletterInput = form.querySelector('[name="newsletterOptIn"]');
     return {
       submittedAt: new Date().toISOString(),
       formName: form.dataset.formName || "Discovery Call Request",
       source: form.dataset.formSource || "contact",
+      firstName: firstNameInput?.value.trim() || "",
       email: emailInput.value.trim(),
+      inquiryType: inquiryInput?.value || "",
+      message: messageInput?.value.trim() || "",
       newsletterOptIn: newsletterInput?.checked ? "yes" : "no",
       pageUrl: window.location.href,
       pageTitle: document.title,
@@ -179,25 +185,10 @@
     };
   }
 
-  function openEmailFallback(form, payload) {
-    const recipient = form.dataset.mailto || "lisa@enlightenedpathhealing.com";
-    const subject = "Discovery call request";
-    const body = [
-      "Discovery call request",
-      "",
-      `Email: ${payload.email}`,
-      `Newsletter opt-in: ${payload.newsletterOptIn === "yes" ? "Yes" : "No"}`,
-      `Source: ${payload.source}`,
-      `Page: ${payload.pageUrl}`
-    ].join("\n");
-    window.location.href = `mailto:${recipient}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-  }
-
   async function submitToSheet(form, payload) {
     const endpoint = endpointFor(form);
     if (!endpoint) {
-      openEmailFallback(form, payload);
-      return "email-fallback";
+      throw new Error("Discovery form endpoint is not configured.");
     }
 
     await fetch(endpoint, {
@@ -213,18 +204,41 @@
 
   forms.forEach((form) => {
     const emailInput = form.querySelector('input[type="email"]');
+    const firstNameInput = form.querySelector('[name="firstName"]');
+    const inquiryInput = form.querySelector('[name="inquiryType"]');
     const button = form.querySelector('button[type="submit"]');
     const initialButtonText = button ? button.textContent.trim() : "Send";
 
     form.addEventListener("submit", async (event) => {
       event.preventDefault();
-      if (!emailInput || !button) return;
+      if (!emailInput || !firstNameInput || !inquiryInput || !button) return;
+
+      const trap = form.querySelector('[name="website"]');
+      if (trap && trap.value.trim()) {
+        form.reset();
+        setStatus(form, "Thank you. Your request has been received.");
+        return;
+      }
+
+      firstNameInput.setAttribute("aria-invalid", firstNameInput.value.trim() ? "false" : "true");
+      inquiryInput.setAttribute("aria-invalid", inquiryInput.value ? "false" : "true");
+      if (!firstNameInput.value.trim()) {
+        setStatus(form, "Please enter your first name.", true);
+        firstNameInput.focus();
+        return;
+      }
 
       const email = emailInput.value.trim();
       if (!emailPattern.test(email)) {
         emailInput.setAttribute("aria-invalid", "true");
         setStatus(form, "Please enter a valid email address.", true);
         emailInput.focus();
+        return;
+      }
+
+      if (!inquiryInput.value) {
+        setStatus(form, "Please choose what you are contacting Lisa about.", true);
+        inquiryInput.focus();
         return;
       }
 
@@ -235,16 +249,12 @@
 
       const payload = buildPayload(form, emailInput);
       try {
-        const result = await submitToSheet(form, payload);
-        if (result === "email-fallback") {
-          setStatus(form, "Opening your email app with the request filled in.");
-        } else {
-          form.reset();
-          setStatus(form, "Thank you. Enlightened Path Healing will follow up soon.");
-        }
+        await submitToSheet(form, payload);
+        form.reset();
+        setStatus(form, "Thank you. I'll be in touch at the email address you provided.");
       } catch (error) {
         console.warn("Discovery call form submission failed:", error);
-        setStatus(form, "Something went wrong. Please use the scheduler below or try again.", true);
+        setStatus(form, "I'm sorry, your request did not go through. Please try again.", true);
       } finally {
         button.disabled = false;
         button.textContent = initialButtonText;

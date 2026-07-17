@@ -18,7 +18,7 @@ CORE_ORDER = (
     "meditation.html",
     "work-trauma-coaching.html",
     "corporate-wellness.html",
-    "success-stories.html",
+    "testimonials.html",
     "resources.html",
     "healernextdoor.html",
     "contact.html",

@@ -5,7 +5,7 @@
     { "source": "/contact", "destination": "/contact.html" },
     { "source": "/corporate-wellness", "destination": "/corporate-wellness.html" },
     { "source": "/services", "destination": "/services.html" },
-    { "source": "/testimonials", "destination": "/success-stories.html" },
+    { "source": "/testimonials", "destination": "/testimonials.html" },
     { "source": "/reiki-energy-healing", "destination": "/reiki-energy-healing.html" },
     { "source": "/akashic-records", "destination": "/akashic-records.html" },
     { "source": "/meditation", "destination": "/meditation.html" },
@@ -16,8 +16,13 @@
   "redirects": [
     { "source": "/home", "destination": "/", "permanent": true },
     { "source": "/links", "destination": "/healernextdoor", "permanent": true },
-    { "source": "/love", "destination": "/akashic-records", "permanent": true },
+    { "source": "/love", "destination": "/testimonials", "permanent": true },
+    { "source": "/reflections", "destination": "/testimonials", "permanent": true },
     { "source": "/newcomers", "destination": "/services", "permanent": true },
+    { "source": "/success-stories", "destination": "/testimonials", "permanent": true },
+    { "source": "/success-stories.html", "destination": "/testimonials", "permanent": true },
+    { "source": "/healernextdoor/category/:path*", "destination": "/healernextdoor", "permanent": true },
+    { "source": "/healernextdoor/tag/:path*", "destination": "/healernextdoor", "permanent": true },
     { "source": "/healernextdoor/category/Astrology", "destination": "/healernextdoor/category/astrology", "permanent": true },
     { "source": "/healernextdoor/tag/Inner+Peace", "destination": "/healernextdoor/tag/inner+peace", "permanent": true }
   ]

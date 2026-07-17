@@ -11,6 +11,7 @@ import html as html_module
 import json
 import mimetypes
 import re
+import subprocess
 import sys
 import time
 from dataclasses import asdict, dataclass
@@ -229,9 +230,9 @@ def rewrite_internal_link(href: str, source_url: str) -> str:
         elif path == "/about":
             path = "/about-lisa.html"
         elif path == "/get-started":
-            path = "/contact.html"
+            path = "/get-started"
         elif path == "/love":
-            path = "/success-stories.html"
+            path = "/testimonials.html"
         return path + (f"?{parsed.query}" if parsed.query else "") + (f"#{parsed.fragment}" if parsed.fragment else "")
     return absolute if parsed.scheme else href
 
@@ -435,7 +436,7 @@ def render_article(article: Article, body_html: str, hero_src: str, slug: str) -
   <script type="application/ld+json">{json.dumps(schema, ensure_ascii=True)}</script>
 </head>
 <body class="legacy-seo-page legacy-article-page">
-  <header class="site-header"><nav class="nav" aria-label="Primary navigation"><a href="../../index.html"><img class="logo" src="../../assets/enlightened-path-healing-logo.png" alt="Enlightened Path Healing"></a><button class="nav-toggle" type="button" aria-label="Open navigation menu" aria-expanded="false"><span></span><span></span><span></span></button><div class="nav-links"><a href="../../index.html">Home</a><a href="../../about-lisa.html">About Lisa</a><a href="../../services.html">Services</a><a href="../../success-stories.html">Reflections</a><a href="../../healernextdoor.html">Resources</a><a href="../../contact.html">Contact</a><a class="button" href="../../contact.html">Book a Discovery Call</a></div></nav></header>
+  <header class="site-header"><nav class="nav" aria-label="Primary navigation"><a href="../../index.html"><img class="logo" src="../../assets/enlightened-path-healing-logo.png" alt="Enlightened Path Healing"></a><button class="nav-toggle" type="button" aria-label="Open navigation menu" aria-expanded="false"><span></span><span></span><span></span></button><div class="nav-links"><a href="../../index.html">Home</a><a href="../../about-lisa.html">About Lisa</a><a href="../../services.html">Services</a><a href="../../testimonials.html">Testimonials</a><a href="../../resources.html">Resources</a><a href="../../contact.html">Contact</a><a class="button" href="../../get-started/index.html">Schedule a Session</a></div></nav></header>
   <main>
     <section class="legacy-article-hero"><div class="container legacy-article-hero-inner"><div class="legacy-article-heading"><a class="eyebrow" href="../../healernextdoor.html">Healer Next Door</a><h1>{title}</h1><p>{description}</p><div class="legacy-article-meta"><span>{category}</span>{time_markup}<span>By {author}</span></div></div>{hero_markup}</div></section>
     <section class="page-section legacy-article-section"><div class="container legacy-article-layout"><article class="legacy-article-body">{body_html}</article><aside class="legacy-article-aside"><p class="eyebrow">Grounded spiritual support</p><h2>Curious about what this could mean for you?</h2><p>Explore Reiki, Akashic Records, mindfulness, and supportive coaching with Lisa Batitto in Montclair, NJ and online.</p><a class="button" href="../../services.html">Explore Services</a><a class="text-link" href="../../contact.html">Start with a discovery call</a></aside></div></section>
@@ -462,7 +463,7 @@ def render_taxonomy(source_url: str, label: str, kind: str) -> str:
   <link rel="stylesheet" href="../../../styles.css">
 </head>
 <body class="legacy-seo-page">
-  <header class="site-header"><nav class="nav" aria-label="Primary navigation"><a href="../../../index.html"><img class="logo" src="../../../assets/enlightened-path-healing-logo.png" alt="Enlightened Path Healing"></a><button class="nav-toggle" type="button" aria-label="Open navigation menu" aria-expanded="false"><span></span><span></span><span></span></button><div class="nav-links"><a href="../../../index.html">Home</a><a href="../../../about-lisa.html">About Lisa</a><a href="../../../services.html">Services</a><a href="../../../success-stories.html">Reflections</a><a href="../../../healernextdoor.html">Resources</a><a href="../../../contact.html">Contact</a><a class="button" href="../../../contact.html">Book a Discovery Call</a></div></nav></header>
+  <header class="site-header"><nav class="nav" aria-label="Primary navigation"><a href="../../../index.html"><img class="logo" src="../../../assets/enlightened-path-healing-logo.png" alt="Enlightened Path Healing"></a><button class="nav-toggle" type="button" aria-label="Open navigation menu" aria-expanded="false"><span></span><span></span><span></span></button><div class="nav-links"><a href="../../../index.html">Home</a><a href="../../../about-lisa.html">About Lisa</a><a href="../../../services.html">Services</a><a href="../../../testimonials.html">Testimonials</a><a href="../../../resources.html">Resources</a><a href="../../../contact.html">Contact</a><a class="button" href="../../../get-started/index.html">Schedule a Session</a></div></nav></header>
   <main>
     <section class="page-hero legacy-hero"><div class="container"><p class="eyebrow">Healer Next Door archive</p><h1>{escaped_label}</h1><p>This older {kind} label has been consolidated so the most useful reflections are easier to find.</p><div class="hero-actions"><a class="button" href="../../../healernextdoor.html">Browse Current Topics</a><a class="button secondary" href="../../../services.html">Explore Services</a></div></div></section>
   </main>
@@ -666,7 +667,7 @@ def write_clean_blog_hub(output_root: Path) -> None:
         ('href="index.html"', 'href="../index.html"'),
         ('href="about-lisa.html"', 'href="../about-lisa.html"'),
         ('href="services.html"', 'href="../services.html"'),
-        ('href="success-stories.html"', 'href="../success-stories.html"'),
+        ('href="testimonials.html"', 'href="../testimonials.html"'),
         ('href="contact.html"', 'href="../contact.html"'),
         ('href="reiki-energy-healing.html"', 'href="../reiki-energy-healing.html"'),
         ('href="akashic-records.html"', 'href="../akashic-records.html"'),
@@ -821,6 +822,9 @@ def main() -> int:
     if args.limit is None:
         update_blog_sitemap(args.output_root, successful_posts)
         write_clean_blog_hub(args.output_root)
+        archive_builder = Path(__file__).with_name("build_blog_archive.py")
+        if archive_builder.exists():
+            subprocess.run([sys.executable, str(archive_builder)], check=True)
 
     failures = sum(result.status == "failed" for result in results)
     print(

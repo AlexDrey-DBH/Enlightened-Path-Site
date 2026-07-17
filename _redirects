@@ -3,7 +3,7 @@
 /contact /contact.html 200
 /corporate-wellness /corporate-wellness.html 200
 /services /services.html 200
-/testimonials /success-stories.html 200
+/testimonials /testimonials.html 200
 /reiki-energy-healing /reiki-energy-healing.html 200
 /akashic-records /akashic-records.html 200
 /meditation /meditation.html 200
@@ -14,8 +14,15 @@
 # Retired legacy routes move to their closest canonical destination.
 /home / 301
 /links /healernextdoor 301
-/love /akashic-records 301
+/love /testimonials 301
+/reflections /testimonials 301
 /newcomers /services 301
+/success-stories /testimonials 301
+/success-stories.html /testimonials 301
+
+# Retired legacy taxonomy pages consolidate into the editorial archive.
+/healernextdoor/category/* /healernextdoor 301
+/healernextdoor/tag/* /healernextdoor 301
 
 # Case-variant legacy taxonomy URLs collapse to one path on Windows.
 /healernextdoor/category/Astrology /healernextdoor/category/astrology 301
