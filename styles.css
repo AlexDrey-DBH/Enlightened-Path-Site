@@ -671,9 +671,21 @@ button {
   gap: 22px;
 }
 
-.testimonial-grid .testimonial {
-  height: auto;
-  min-height: 100%;
+.testimonial-grid {
+  align-items: stretch;
+}
+
+.testimonial-grid .testimonial,
+.testimonial-grid .testimonial:nth-child(even) {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  min-height: 0;
+  margin-top: 0;
+}
+
+.testimonial-grid .testimonial cite {
+  margin-top: auto;
 }
 
 .video-feature-link {
@@ -904,7 +916,7 @@ button {
 }
 
 .testimonial p::before {
-  content: "Client reflection";
+  content: "Client testimonial";
   position: absolute;
   top: 0;
   left: 0;
