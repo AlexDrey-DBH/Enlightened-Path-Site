@@ -1,6 +1,6 @@
 # Enlightened Path Healing
 
-The production website lives directly in this repository root. It is a static site designed for GitHub source control and direct deployment through Vercel.
+The production website lives directly in this repository root. It is a static site deployed to GitHub Pages from the `main` branch.
 
 ## Production structure
 
@@ -8,7 +8,7 @@ The production website lives directly in this repository root. It is a static si
 - `assets/`: production images, fonts, and licensed social icons
 - route folders such as `about/`, `healernextdoor/`, and `events/`: legacy and SEO-preserved URLs
 - `styles.css` and `site.js`: shared site styling and behavior
-- `sitemap.xml`, `robots.txt`, `_redirects`, and `vercel.json`: search and deployment configuration
+- `sitemap.xml`, `robots.txt`, `_redirects`, and `CNAME`: search and deployment configuration
 - `docs/`: non-production strategy, migration, QA, integration, and maintenance material
 
 ## Local preview
@@ -19,15 +19,13 @@ py -m http.server 8000
 
 Open `http://localhost:8000/`.
 
-## Vercel deployment
+## GitHub Pages deployment
 
-Import this repository in Vercel and use these settings:
+The GitHub Actions workflow at `.github/workflows/deploy-pages.yml` deploys each push to `main`. It publishes only the public website files and excludes `docs/`, `samples/`, and `tmp/`.
 
-- Framework Preset: `Other`
-- Build Command: leave blank
-- Output Directory: leave blank
+In GitHub, open `Settings` > `Pages`, set the source to `GitHub Actions`, and set the custom domain to `enlightenedpathhealing.com`. Enable HTTPS after GitHub verifies the domain.
 
-Vercel serves `index.html` from the repository root. `vercel.json` preserves the clean canonical routes and redirects used by the prior site.
+The root `CNAME` file contains the public domain. At the DNS provider, point the apex domain and `www` subdomain to GitHub Pages using the values GitHub displays in the Pages settings.
 
 ## SEO preservation
 

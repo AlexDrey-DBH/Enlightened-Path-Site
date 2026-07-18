@@ -3,6 +3,7 @@
 /.vercel/
 /node_modules/
 /dist/
+/_site/
 
 # Operating-system and interpreter noise.
 __pycache__/
