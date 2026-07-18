@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://www.enlightenedpathhealing.com/sitemap.xml
+Sitemap: https://enlightenedpathhealing.com/sitemap.xml

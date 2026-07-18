@@ -13,7 +13,7 @@ from urllib.parse import unquote, urlparse
 from lxml import html
 
 
-ORIGIN = "https://www.enlightenedpathhealing.com"
+ORIGIN = "https://enlightenedpathhealing.com"
 PROJECT_ROOT = Path(__file__).resolve().parents[2]
 MIGRATION_DOCS = PROJECT_ROOT / "docs" / "migration"
 
@@ -124,7 +124,12 @@ def audit(output_root: Path, report_path: Path) -> dict:
     sitemap = (output_root / "sitemap.xml").read_text(encoding="utf-8")
     sitemap_posts = set(re.findall(rf"{re.escape(ORIGIN)}/healernextdoor/[^<]+", sitemap))
     sitemap_posts = {url for url in sitemap_posts if "/category/" not in url and "/tag/" not in url}
-    expected_posts = {row["source_url"] for row in post_rows}
+    # The migration report records the legacy hostname; compare paths against
+    # the current production hostname configured for this deployment.
+    expected_posts = {
+        row["source_url"].replace("https://www.enlightenedpathhealing.com", ORIGIN)
+        for row in post_rows
+    }
     missing_from_sitemap = expected_posts - sitemap_posts
     if missing_from_sitemap:
         errors.append(f"Sitemap is missing {len(missing_from_sitemap)} migrated posts")
