@@ -40,6 +40,28 @@ jobs:
             --exclude='_redirects' \
             ./ _site/
 
+      - name: Build clean URL route copies
+        run: |
+          while IFS=':' read -r route source; do
+            target="_site/$route/index.html"
+            mkdir -p "$(dirname "$target")"
+            cp "_site/$source" "$target"
+            perl -0pi -e 's#<head>#<head>\n  <base href="/">#' "$target"
+            perl -0pi -e "s#href=\"\\#\"#href=\"/$route\\#\"#g" "$target"
+          done <<'ROUTES'
+          about:about-lisa.html
+          contact:contact.html
+          corporate-wellness:corporate-wellness.html
+          services:services.html
+          testimonials:testimonials.html
+          reiki-energy-healing:reiki-energy-healing.html
+          akashic-records:akashic-records.html
+          meditation:meditation.html
+          work-trauma:work-trauma-coaching.html
+          resources:resources.html
+          healernextdoor:healernextdoor.html
+          ROUTES
+
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v4
         with:

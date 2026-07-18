@@ -21,7 +21,7 @@ Open `http://localhost:8000/`.
 
 ## GitHub Pages deployment
 
-The GitHub Actions workflow at `.github/workflows/deploy-pages.yml` deploys each push to `main`. It publishes only the public website files and excludes `docs/`, `samples/`, and `tmp/`.
+The GitHub Actions workflow at `.github/workflows/deploy-pages.yml` deploys each push to `main`. It publishes only the public website files, excludes `docs/`, `samples/`, and `tmp/`, and creates current static copies for the site's clean canonical URLs.
 
 In GitHub, open `Settings` > `Pages`, set the source to `GitHub Actions`, and set the custom domain to `enlightenedpathhealing.com`. Enable HTTPS after GitHub verifies the domain.
 
