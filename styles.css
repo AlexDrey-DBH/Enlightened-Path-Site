@@ -4183,6 +4183,29 @@ button {
   margin-top: 16px;
 }
 
+.action-item {
+  position: relative;
+  padding-top: 58px;
+  border: 2px solid #ff2f92;
+  box-shadow: 0 14px 34px rgba(255, 47, 146, 0.12);
+}
+
+.action-item::before {
+  content: "Action item";
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  padding: 4px 8px;
+  border-radius: var(--radius-pill);
+  background: #ff2f92;
+  color: var(--white);
+  font-size: 0.66rem;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  line-height: 1.2;
+  text-transform: uppercase;
+}
+
 @media (max-width: 720px) {
   .home-reflections-carousel .carousel-track {
     gap: 0;
