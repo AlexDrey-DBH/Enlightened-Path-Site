@@ -1,0 +1,15 @@
+{
+  "name": "Enlightened Path Healing",
+  "short_name": "Enlightened Path",
+  "icons": [
+    {
+      "src": "/assets/favicon-mark.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ],
+  "theme_color": "#6f5665",
+  "background_color": "#ffffff",
+  "display": "standalone"
+}
