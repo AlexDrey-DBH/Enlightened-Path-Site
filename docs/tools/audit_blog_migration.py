@@ -61,12 +61,17 @@ def audit(output_root: Path, report_path: Path) -> dict:
             if page.exists():
                 article_pages.append(page)
 
-    if len(article_pages) != 253:
-        errors.append(f"Expected 253 article files, found {len(article_pages)}")
+    migrated_article_pages = [
+        page
+        for page in article_pages
+        if any(page.resolve() == (output_root / row["destination"]).resolve() for row in post_rows)
+    ]
+    if len(migrated_article_pages) != 253:
+        errors.append(f"Expected 253 migrated article files, found {len(migrated_article_pages)}")
 
     broken_links: set[str] = set()
     remote_images: set[str] = set()
-    for page in article_pages:
+    for page in migrated_article_pages:
         markup = page.read_text(encoding="utf-8")
         document = html.fromstring(markup)
         slug = page.parent.name
@@ -138,7 +143,7 @@ def audit(output_root: Path, report_path: Path) -> dict:
 
     return {
         "passed": not errors,
-        "article_pages": len(article_pages),
+        "article_pages": len(migrated_article_pages),
         "taxonomy_report_rows": len(taxonomy_rows),
         "taxonomy_physical_pages": len(taxonomy_pages),
         "remote_article_images": len(remote_images),

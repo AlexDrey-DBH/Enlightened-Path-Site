@@ -2413,6 +2413,15 @@ button {
   object-fit: cover;
 }
 
+.blog-card-mark {
+  position: relative;
+  background:
+    url("assets/favicon-mark.png") center / 104px auto no-repeat,
+    radial-gradient(circle at 74% 22%, rgba(239, 179, 26, 0.16), transparent 24%),
+    radial-gradient(circle at 18% 82%, rgba(139, 150, 119, 0.2), transparent 34%),
+    linear-gradient(135deg, rgba(245, 239, 244, 0.96), rgba(242, 245, 238, 0.92));
+}
+
 .blog-card-meta {
   flex: 0 0 auto !important;
   margin: -4px 0 12px;
@@ -2501,6 +2510,10 @@ button {
   grid-template-columns: minmax(0, 1.08fr) minmax(300px, 0.92fr);
   align-items: center;
   gap: 64px;
+}
+
+.legacy-article-hero-inner.legacy-article-hero-single {
+  grid-template-columns: minmax(0, 820px);
 }
 
 .legacy-article-heading {
