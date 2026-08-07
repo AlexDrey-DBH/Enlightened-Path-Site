@@ -13,6 +13,17 @@ python docs/tools/audit_core_site.py
 
 The core-site audit regenerates the local sitemap automatically. It inventories every HTML page in the production site root, groups the legacy archive, and reports open action items.
 
+## Publishing a New Blog
+
+The homepage's **Latest from the Blog** section is generated from the three newest article pages that include `BlogPosting` metadata. Before reviewing or committing a new article locally, run:
+
+```powershell
+python docs/tools/update_homepage_latest_blogs.py
+python docs/tools/audit_core_site.py
+```
+
+GitHub Pages runs the same homepage update automatically on every push to `main`, so the deployed homepage remains current even if the local command is missed.
+
 ## Marking Action Items
 
 Any unfinished visual, integration, or content task must remain visibly hot pink until it is resolved:

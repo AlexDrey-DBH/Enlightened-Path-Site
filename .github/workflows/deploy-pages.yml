@@ -21,6 +21,9 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
+      - name: Refresh homepage latest blogs
+        run: python3 docs/tools/update_homepage_latest_blogs.py
+
       - name: Configure Pages
         uses: actions/configure-pages@v5
 
