@@ -19,10 +19,11 @@ The homepage's **Latest from the Blog** section is generated from the three newe
 
 ```powershell
 python docs/tools/update_homepage_latest_blogs.py
+python docs/tools/sync_blog_card_excerpts.py
 python docs/tools/audit_core_site.py
 ```
 
-GitHub Pages runs the same homepage update automatically on every push to `main`, so the deployed homepage remains current even if the local command is missed.
+The card-excerpt sync uses the first sentence in the article body, not a separately written summary. GitHub Pages runs both blog updates automatically on every push to `main`, so the deployed homepage and archive cards remain current even if the local commands are missed.
 
 ## Marking Action Items
 

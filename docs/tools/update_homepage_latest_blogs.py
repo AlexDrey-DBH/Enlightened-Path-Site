@@ -25,6 +25,7 @@ class Post:
     slug: str
     title: str
     description: str
+    excerpt: str
     author: str
     published: date
     topic: str
@@ -32,7 +33,8 @@ class Post:
 
 
 def clean_text(value: object) -> str:
-    text = re.sub(r"<[^>]+>", "", str(value or ""))
+    text = re.sub(r"<br\s*/?>", " ", str(value or ""), flags=re.IGNORECASE)
+    text = re.sub(r"<[^>]+>", "", text)
     return " ".join(html.unescape(text).split())
 
 
@@ -82,6 +84,24 @@ def image_path(value: object) -> str | None:
     return path if (ROOT / path).is_file() else None
 
 
+def first_article_sentence(markup: str) -> str:
+    body_match = re.search(
+        r'<article\s+class=["\'][^"\']*legacy-article-body[^"\']*["\'][^>]*>(.*?)</article>',
+        markup,
+        flags=re.IGNORECASE | re.DOTALL,
+    )
+    if not body_match:
+        return ""
+    for paragraph in re.findall(r'<p\b[^>]*>(.*?)</p>', body_match.group(1), flags=re.IGNORECASE | re.DOTALL):
+        text = clean_text(paragraph)
+        text = re.sub(r'^By\s+[A-Z][A-Za-z.\'-]+\s+[A-Z][A-Za-z.\'-]+\.?\s*', "", text)
+        if not text:
+            continue
+        sentence = re.search(r'^(.+?[.!?]["\']?)(?=\s+[A-Z"\']|$)', text)
+        return (sentence.group(1) if sentence else text).strip()
+    return ""
+
+
 def read_post(page: Path) -> Post | None:
     markup = page.read_text(encoding="utf-8")
     data = structured_post(markup)
@@ -104,6 +124,7 @@ def read_post(page: Path) -> Post | None:
         slug=page.parent.name,
         title=clean_text(data.get("headline")),
         description=clean_text(data.get("description")),
+        excerpt=first_article_sentence(markup) or clean_text(data.get("description")),
         author=clean_text(author) or "Lisa Batitto",
         published=published,
         topic=clean_text(topic_match.group(1)) if topic_match else "Blog",
@@ -136,7 +157,7 @@ def render_card(post: Post) -> str:
         f'<p class="blog-card-meta"><time datetime="{post.published.isoformat()}">'
         f'{post.published.strftime("%B").replace(" 0", " ")} {post.published.day}, {post.published.year}'
         f'</time> &middot; {html.escape(post.author)}</p>'
-        f'<p>{html.escape(post.description)}</p><a class="text-link" href="{href}">Read Blog</a></article>'
+        f'<p>{html.escape(post.excerpt)}</p><a class="text-link" href="{href}">Read Blog</a></article>'
     )
 
 
