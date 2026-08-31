@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex,nofollow">
+  <title>Blog Publisher | Enlightened Path Healing</title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <div class="login-shell" id="login-shell">
+    <form class="login-panel" id="login-form">
+      <img src="/publisher-mark.svg" alt="">
+      <p class="eyebrow">Enlightened Path Healing</p>
+      <h1>Blog Publisher</h1>
+      <label for="password">Password</label>
+      <input id="password" name="password" type="password" autocomplete="current-password" required>
+      <button type="submit">Sign In</button>
+      <p class="message" id="login-message" role="status"></p>
+    </form>
+  </div>
+
+  <div class="app-shell" id="app-shell" hidden>
+    <header class="app-header">
+      <div>
+        <p class="eyebrow">Enlightened Path Healing</p>
+        <h1>Blog Publisher</h1>
+      </div>
+      <button class="icon-button" id="logout-button" type="button" title="Sign out" aria-label="Sign out">&#8594;</button>
+    </header>
+
+    <main>
+      <section class="editor-panel" aria-labelledby="new-post-heading">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">New Post</p>
+            <h2 id="new-post-heading">Prepare a blog post</h2>
+          </div>
+          <span class="status-pill">Free workflow</span>
+        </div>
+
+        <form id="post-form">
+          <label for="title">Title</label>
+          <input id="title" name="title" type="text" maxlength="180" required>
+
+          <label for="body">Blog copy</label>
+          <textarea id="body" name="body" rows="16" maxlength="30000" required></textarea>
+
+          <div class="field-grid">
+            <div>
+              <label for="topic">Topic</label>
+              <select id="topic" name="topic" required>
+                <option value="healing-spiritual-growth">Healing &amp; Spiritual Growth</option>
+                <option value="reiki-energy-healing">Reiki &amp; Energy Healing</option>
+                <option value="akashic-records-intuition">Akashic Records &amp; Intuition</option>
+                <option value="meditation-mindfulness">Meditation &amp; Mindfulness</option>
+                <option value="work-burnout-everyday-life">Work, Burnout &amp; Everyday Life</option>
+                <option value="astrology-guest-posts">Astrology &amp; Guest Posts</option>
+              </select>
+            </div>
+            <div>
+              <label for="publish-at">Planned publish date and time</label>
+              <input id="publish-at" name="publishAt" type="datetime-local" required>
+            </div>
+          </div>
+
+          <label for="image">Featured image</label>
+          <input id="image" name="image" type="file" accept="image/jpeg,image/png,image/webp" required>
+          <p class="field-note">JPG, PNG, or WebP, up to 1 MB. A landscape image works best.</p>
+
+          <label for="image-alt">Image description</label>
+          <input id="image-alt" name="imageAlt" type="text" maxlength="220" required>
+          <p class="field-note">Describe what is visible in the image for people using screen readers.</p>
+
+          <div class="form-actions">
+            <button class="secondary-button" type="submit" name="action" value="draft">Save Draft</button>
+            <button type="submit" name="action" value="publish">Publish Now</button>
+          </div>
+          <p class="message" id="form-message" role="status"></p>
+        </form>
+      </section>
+
+      <section class="posts-panel" aria-labelledby="posts-heading">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">Posts</p>
+            <h2 id="posts-heading">Drafts and recent posts</h2>
+          </div>
+          <button class="icon-button" id="refresh-button" type="button" title="Refresh posts" aria-label="Refresh posts">&#8635;</button>
+        </div>
+        <div id="posts-list" class="posts-list"></div>
+      </section>
+    </main>
+  </div>
+
+  <script src="/app.js" defer></script>
+</body>
+</html>

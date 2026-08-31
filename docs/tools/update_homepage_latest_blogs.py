@@ -104,12 +104,21 @@ def first_article_sentence(markup: str) -> str:
 
 def read_post(page: Path) -> Post | None:
     markup = page.read_text(encoding="utf-8")
+    robots = re.search(
+        r'<meta\s+name=["\']robots["\']\s+content=["\']([^"\']+)["\']',
+        markup,
+        flags=re.IGNORECASE,
+    )
+    if robots and "noindex" in robots.group(1).lower():
+        return None
     data = structured_post(markup)
     if not data:
         return None
     try:
         published = date.fromisoformat(str(data.get("datePublished", ""))[:10])
     except ValueError:
+        return None
+    if published > date.today():
         return None
 
     author = data.get("author", "Lisa Batitto")

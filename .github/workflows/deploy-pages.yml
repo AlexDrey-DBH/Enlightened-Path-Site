@@ -21,6 +21,9 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
+      - name: Build publisher-managed blog posts
+        run: python3 docs/tools/build_managed_blog_posts.py
+
       - name: Refresh homepage latest blogs
         run: python3 docs/tools/update_homepage_latest_blogs.py
 

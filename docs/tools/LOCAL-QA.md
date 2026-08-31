@@ -18,12 +18,13 @@ The core-site audit regenerates the local sitemap automatically. It inventories 
 The homepage's **Latest from the Blog** section is generated from the three newest article pages that include `BlogPosting` metadata. Before reviewing or committing a new article locally, run:
 
 ```powershell
+python docs/tools/build_managed_blog_posts.py
 python docs/tools/update_homepage_latest_blogs.py
 python docs/tools/sync_blog_card_excerpts.py
 python docs/tools/audit_core_site.py
 ```
 
-The card-excerpt sync uses the first sentence in the article body, not a separately written summary. GitHub Pages runs both blog updates automatically on every push to `main`, so the deployed homepage and archive cards remain current even if the local commands are missed.
+The managed-post builder creates each published article and its SEO metadata, then updates the Blog archive, matching topic archive, and XML sitemap. The card-excerpt sync uses the first sentence in the article body, not a separately written summary. GitHub Pages runs all blog updates automatically on every push to `main`, so the deployed homepage and archive cards remain current even if the local commands are missed.
 
 ## Marking Action Items
 
