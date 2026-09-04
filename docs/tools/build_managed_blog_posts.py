@@ -58,6 +58,11 @@ def description(value: object) -> str:
     return sentence[:155].rsplit(" ", 1)[0].rstrip(".,;:") + "..."
 
 
+def inline_markup(value: str) -> str:
+    escaped = html.escape(value)
+    return re.sub(r"\*([^*\n]+)\*", r"<em>\1</em>", escaped)
+
+
 def parse_date(value: object) -> datetime:
     raw = str(value or "").replace("Z", "+00:00")
     parsed = datetime.fromisoformat(raw)
@@ -96,7 +101,7 @@ def article_markup(post: dict) -> str:
     topic = html.escape(TOPICS[post["topic"]])
     published = post["date"]
     display_date = f"{published.strftime('%B')} {published.day}, {published.year}"
-    body = "".join(f"<p>{html.escape(chunk)}</p>" for chunk in paragraphs(post["body"]))
+    body = "".join(f"<p>{inline_markup(chunk)}</p>" for chunk in paragraphs(post["body"]))
     schema = {
         "@context": "https://schema.org",
         "@type": "BlogPosting",

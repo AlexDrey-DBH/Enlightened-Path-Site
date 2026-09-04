@@ -1,3 +1,17 @@
 {
-  "posts": []
+  "posts": [
+    {
+      "id": "maybe-you-dont-need-to-climb-the-mountain",
+      "slug": "maybe-you-dont-need-to-climb-the-mountain",
+      "title": "Maybe You Don't Need to Climb the Mountain",
+      "body": "The Who has been part of my life for as long as I can remember. When I first heard *Tommy* as a pre-teen, I was captivated. I understood the story, but I didn't get its full implications. I certainly didn't imagine that, decades later, after walking my own spiritual path, I would see *Tommy* very differently.\n\nAfter a traumatic childhood experience, Tommy becomes physically cut off from the world around him. He cannot see, hear or speak. Despite his isolation from others, he becomes a pinball champion and has a devoted following. In a very dramatic sequence, his senses are restored. Enlightenment is achieved through the destruction of his ego. It's powerful. But then something interesting happens.\n\nOther people begin looking to Tommy for answers. And Tommy, believing he has found the way, tries to show them how to reach what he has found by following his path.\n\nIt doesn't work.\n\nHis followers eventually reject him, and that part of the story resonates with me much differently today. There is a difference between learning from someone and handing them authority over our own journey.\n\nTeachers, healers and spiritual practitioners can introduce us to ideas, challenge us, support us and sometimes help us see something we couldn't see before. But their path is still their path.\n\nI believe the best guides don't ask us to become more like them. They help us become more discerning about what is true for ourselves.\n\nMaybe that's what I finally understand about *Tommy*: nobody can climb the mountain for us. And maybe we don't need to climb it at all.",
+      "topic": "healing-spiritual-growth",
+      "publishAt": "2026-09-01T09:00:00-04:00",
+      "status": "published",
+      "imagePath": "assets/blog/maybe-you-dont-need-to-climb-the-mountain/hero.jpeg",
+      "imageAlt": "A person standing on a mountain summit at sunrise, surrounded by light",
+      "createdAt": "2026-08-31T09:00:00-04:00",
+      "publishedAt": "2026-09-03T09:00:00-04:00"
+    }
+  ]
 }
