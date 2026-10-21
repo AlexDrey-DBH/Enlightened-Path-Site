@@ -1,8 +1,12 @@
 # Patch Notes
 
-Updated September 21, 2026. All history entries are retained; later entries may supersede earlier implementations.
+Updated October 20, 2026. All history entries are retained; later entries may supersede earlier implementations.
 
 Patch notes preference: keep this client-readable Markdown document as the primary project history. Preserve prior entries when adding new work.
+
+## October 2026
+
+- Blog: published "Something Worth Coming Home To" with its supplied image; refreshed the homepage, blog archives, Healing & Spiritual Growth topic archive, metadata, structured data, and sitemap through the managed blog build.
 
 ## September 2026
 
